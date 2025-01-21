@@ -1,0 +1,17 @@
+<div class="btn-container">
+    <button (click)="selectConfig(0)"> config 1</button>
+    <button (click)="selectConfig(1)"> config 2</button>
+    <button (click)="selectConfig(2)"> config 3</button>
+</div>
+
+@if(selectedConfig) {
+    <div class="selected-config-section">
+        <div>
+            <pre>{{ selectedConfig | json }}</pre>
+        </div>
+        <div [ngStyle]="selectedConfig.containerStyle">
+            <h5 [ngStyle]="selectedConfig.title.style">{{selectedConfig.title.content}}</h5>
+            <p [ngStyle]="selectedConfig.subText.style">{{selectedConfig.subText.content}}</p>
+        </div>
+    </div>
+}

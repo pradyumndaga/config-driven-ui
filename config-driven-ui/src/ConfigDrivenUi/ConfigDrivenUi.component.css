@@ -1,0 +1,17 @@
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+    gap: 1rem;
+}
+
+.selected-config-section {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 1rem;
+}
