@@ -4,14 +4,15 @@
     <button (click)="selectConfig(2)"> config 3</button>
 </div>
 
-@if(selectedConfig) {
+@let config = selectedConfig();
+@if(!!config) {
     <div class="selected-config-section">
         <div>
-            <pre>{{ selectedConfig | json }}</pre>
+            <pre>{{ config | json }}</pre>
         </div>
-        <div [ngStyle]="selectedConfig.containerStyle">
-            <h5 [ngStyle]="selectedConfig.title.style">{{selectedConfig.title.content}}</h5>
-            <p [ngStyle]="selectedConfig.subText.style">{{selectedConfig.subText.content}}</p>
+        <div [ngStyle]="config?.containerStyle">
+            <h5 [ngStyle]="config?.title?.style">{{config?.title?.content}}</h5>
+            <p [ngStyle]="config?.subText?.style">{{config?.subText?.content}}</p>
         </div>
     </div>
 }

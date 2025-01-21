@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-config-driven-ui',
@@ -74,11 +74,11 @@ export class ConfigDrivenUiComponent{
     },
   ];
 
-  selectedConfig = this.configList[0];
+  selectedConfig = signal(this.configList[0]);
   constructor() {}
 
 
   selectConfig(idx: number) {
-    this.selectedConfig = this.configList[idx];
+    this.selectedConfig.set(this.configList[idx] || {});
   }
 }
